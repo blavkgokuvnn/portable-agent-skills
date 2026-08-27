@@ -1,0 +1,49 @@
+name: single-agent-minimal
+initial: scope
+
+nodes:
+  scope:
+    prompt: Record the task objective, completion criteria, current inputs, constraints, and resume information.
+    before_transfer:
+      type: checklist
+      items:
+        - Objective and completion criteria are recorded
+        - Current inputs, constraints, and resume information are recorded
+  work:
+    prompt: Perform the current task phase and record the receipt or blocker needed to resume it safely.
+    before_transfer:
+      type: checklist
+      items:
+        - The current phase reached its next transition boundary
+        - A receipt, blocker, or resume status is recorded
+  verify:
+    prompt: Evaluate the recorded completion criteria against current evidence. Return to work when a named criterion is not met.
+    dynamic_before_transfer:
+      path: current_entry
+      required: false
+      min_items: 0
+      require_reason: true
+      require_basis: true
+      allow_types:
+        - predicate
+        - command
+  done:
+    prompt: Record the terminal outcome, supporting evidence, unresolved items, and recovery or resume information.
+
+edges:
+  - from: scope
+    to: work
+    condition: Task state is initialized.
+    max_attempts: 2
+  - from: work
+    to: verify
+    condition: The work phase reached its verification boundary.
+    max_attempts: 3
+  - from: verify
+    to: work
+    condition: A named completion criterion is not met and work must resume.
+    max_attempts: 2
+  - from: verify
+    to: done
+    condition: Recorded completion criteria are met and unresolved items are recorded.
+    max_attempts: 2

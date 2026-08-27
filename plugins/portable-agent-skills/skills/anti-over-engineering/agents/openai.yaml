@@ -1,0 +1,6 @@
+interface:
+  display_name: "Anti Over-Engineering"
+  short_description: "Keep complex work on the shortest correct route"
+  default_prompt: "Use $anti-over-engineering to freeze scope and finish by the shortest correct route."
+policy:
+  allow_implicit_invocation: true

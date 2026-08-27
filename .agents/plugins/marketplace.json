@@ -1,0 +1,104 @@
+{
+  "name": "portable-agent-skills",
+  "interface": {
+    "displayName": "Portable Agent Skills"
+  },
+  "plugins": [
+    {
+      "name": "portable-agent-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/portable-agent-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "codemap",
+      "source": {
+        "source": "local",
+        "path": "./plugins/codemap"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "evidence-grounding",
+      "source": {
+        "source": "local",
+        "path": "./plugins/evidence-grounding"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "intent-lock",
+      "source": {
+        "source": "local",
+        "path": "./plugins/intent-lock"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "provenance-memory",
+      "source": {
+        "source": "local",
+        "path": "./plugins/provenance-memory"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "safe-edit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/safe-edit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "statem-single-agent",
+      "source": {
+        "source": "local",
+        "path": "./plugins/statem-single-agent"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "version-milestones",
+      "source": {
+        "source": "local",
+        "path": "./plugins/version-milestones"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

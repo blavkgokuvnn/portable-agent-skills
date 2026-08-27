@@ -1,0 +1,6 @@
+interface:
+  display_name: "StateM Single Agent"
+  short_description: "Track durable local state for multi-phase work"
+  default_prompt: "Use $statem-single-agent locally for at least three substantial phases or durable mutable state that may outlive context."
+policy:
+  allow_implicit_invocation: false

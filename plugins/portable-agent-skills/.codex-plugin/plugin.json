@@ -1,0 +1,29 @@
+{
+  "name": "portable-agent-skills",
+  "version": "1.0.0",
+  "description": "Eight portable skills for grounded, scoped, and durable agent work.",
+  "author": {
+    "name": "Community Contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "grounding",
+    "workflow"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Portable Agent Skills",
+    "shortDescription": "Install eight focused workflow skills at once.",
+    "longDescription": "Ground claims, resolve ambiguity, bound changes, preserve provenance, and track durable work with eight focused skills.",
+    "developerName": "Community Contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the most relevant Portable Agent Skill for this task."
+    ]
+  }
+}

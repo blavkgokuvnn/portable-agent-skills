@@ -1,0 +1,29 @@
+{
+  "name": "codemap",
+  "version": "0.1.0",
+  "description": "Map repository structure, dependencies, and change blast radius.",
+  "author": {
+    "name": "Community Contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dependencies",
+    "architecture",
+    "refactoring"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codemap",
+    "shortDescription": "Map structural dependencies before changes.",
+    "longDescription": "Trace repository owners, producers, consumers, entry points, and shared contracts before structural changes.",
+    "developerName": "Community Contributors",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use $codemap to map a structural change and its blast radius."
+    ]
+  }
+}

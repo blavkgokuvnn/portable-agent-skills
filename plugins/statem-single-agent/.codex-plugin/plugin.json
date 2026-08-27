@@ -1,0 +1,29 @@
+{
+  "name": "statem-single-agent",
+  "version": "1.0.0",
+  "description": "A minimal StateM profile for durable single-agent task phases.",
+  "author": {
+    "name": "Community Contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "single-agent",
+    "state-machine",
+    "task-state"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "StateM Single Agent",
+    "shortDescription": "Track durable state for multi-phase local work.",
+    "longDescription": "Use an external StateM installation when one local task has at least three substantial phases or mutable execution state that must outlive context.",
+    "developerName": "Community Contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use $statem-single-agent locally for at least three substantial phases or durable mutable state that may outlive context."
+    ]
+  }
+}

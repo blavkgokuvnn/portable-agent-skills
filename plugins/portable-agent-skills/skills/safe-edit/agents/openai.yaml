@@ -1,0 +1,6 @@
+interface:
+  display_name: "Safe Edit"
+  short_description: "Preserve behavior while changing shared code"
+  default_prompt: "Use $safe-edit to patch this behavior while preserving established contracts."
+policy:
+  allow_implicit_invocation: true

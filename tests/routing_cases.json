@@ -1,0 +1,58 @@
+[
+  {
+    "skill": "anti-over-engineering",
+    "positive_prompt": "Plan a significant architecture change with several plausible routes and a long verification phase.",
+    "negative_prompt": "Fix one obvious spelling mistake in a comment.",
+    "positive_description_terms": ["significant changes", "several plausible routes"],
+    "negative_description_terms": ["skip tiny clear edits"]
+  },
+  {
+    "skill": "evidence-grounding",
+    "positive_prompt": "Verify the current high-stakes claim, distinguish fact from inference, and report conflicting sources.",
+    "negative_prompt": "Rewrite this fictional greeting in a warmer tone.",
+    "positive_description_terms": ["material claims", "consequential decisions"],
+    "negative_description_terms": ["do not use for casual wording edits"]
+  },
+  {
+    "skill": "intent-lock",
+    "positive_prompt": "The request has two plausible referents that would change scope and external authority.",
+    "negative_prompt": "Read the current version from the repository and report it.",
+    "positive_description_terms": ["multiple plausible readings", "authority"],
+    "negative_description_terms": ["do not use for minor wording differences", "facts that can be checked directly"]
+  },
+  {
+    "skill": "statem-single-agent",
+    "positive_prompt": "Track one agent through four substantial phases whose mutable state must survive context loss.",
+    "negative_prompt": "Make a two-minute checklist for a tiny edit.",
+    "positive_description_terms": ["at least three substantial phases", "mutable execution state", "local python environment"],
+    "negative_description_terms": ["do not invoke on web or mobile", "short tasks and ordinary checklists"]
+  },
+  {
+    "skill": "codemap",
+    "positive_prompt": "Map owners, imports, producers, consumers, and blast radius before moving a shared module.",
+    "negative_prompt": "Change one isolated local expression whose callers and structure are already known.",
+    "positive_description_terms": ["repository dependencies", "structural blast radius"],
+    "negative_description_terms": ["isolated behavior-only edits", "no structural impact"]
+  },
+  {
+    "skill": "safe-edit",
+    "positive_prompt": "Change a shared parser with several callers and meaningful regression risk while preserving behavior.",
+    "negative_prompt": "Correct a documentation typo with no behavioral effect.",
+    "positive_description_terms": ["multiple callers", "regression risk"],
+    "negative_description_terms": ["documentation-only", "no behavioral contract"]
+  },
+  {
+    "skill": "provenance-memory",
+    "positive_prompt": "Retrieve an earlier project decision with its source and validity before using it now.",
+    "negative_prompt": "Keep a disposable note for this reply without changing project memory.",
+    "positive_description_terms": ["provenance-aware project memory", "earlier fact"],
+    "negative_description_terms": ["disposable session scratch", "explicit user authority"]
+  },
+  {
+    "skill": "version-milestones",
+    "positive_prompt": "Bump a major version while removing established behavior and synchronizing compatibility evidence.",
+    "negative_prompt": "Make an unversioned internal edit with no compatibility or release boundary.",
+    "positive_description_terms": ["version changes", "bumping a version"],
+    "negative_description_terms": ["unversioned changes", "no compatibility or release boundary"]
+  }
+]
