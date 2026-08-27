@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Synchronize or verify canonical skill folders and their generated mirrors."""
+"""Synchronize or verify eight standalone skills and their generated mirrors."""
 
 from __future__ import annotations
 
@@ -66,10 +66,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true", help="rewrite generated mirrors")
     parser.add_argument(
-        "--anti-repo",
+        "--repos-root",
         type=Path,
-        default=repo_root.parent / "anti-over-engineering",
-        help="checkout containing the canonical anti-over-engineering plugin",
+        default=repo_root.parent,
+        help="directory containing the eight canonical standalone repositories",
     )
     parser.add_argument(
         "--legacy-repo",
@@ -85,18 +85,11 @@ def main() -> int:
     args = parser.parse_args()
 
     bundle_root = repo_root / "plugins" / "portable-agent-skills" / "skills"
+    repos_root = args.repos_root.resolve()
     sources = {
-        name: repo_root / "plugins" / name / "skills" / name
+        name: repos_root / name / "plugins" / name / "skills" / name
         for name in SKILL_NAMES
-        if name != "anti-over-engineering"
     }
-    sources["anti-over-engineering"] = (
-        args.anti_repo.resolve()
-        / "plugins"
-        / "anti-over-engineering"
-        / "skills"
-        / "anti-over-engineering"
-    )
 
     for name, source in sources.items():
         file_hashes(source)

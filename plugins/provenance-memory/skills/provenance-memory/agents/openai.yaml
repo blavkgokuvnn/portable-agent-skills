@@ -1,6 +1,0 @@
-interface:
-  display_name: "Provenance Memory"
-  short_description: "Maintain verifiable project facts and decisions"
-  default_prompt: "Use $provenance-memory to retrieve or update project memory with explicit provenance."
-policy:
-  allow_implicit_invocation: true

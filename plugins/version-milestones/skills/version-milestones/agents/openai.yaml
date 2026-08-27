@@ -1,6 +1,0 @@
-interface:
-  display_name: "Version Milestones"
-  short_description: "Keep behavior and release versions synchronized"
-  default_prompt: "Use $version-milestones to update this version without losing established behavior."
-policy:
-  allow_implicit_invocation: true

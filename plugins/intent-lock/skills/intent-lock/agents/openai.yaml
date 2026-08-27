@@ -1,6 +1,0 @@
-interface:
-  display_name: "Intent Lock"
-  short_description: "Clarify material ambiguity before acting"
-  default_prompt: "Use $intent-lock to resolve any decision-changing ambiguity in this request before acting."
-policy:
-  allow_implicit_invocation: true

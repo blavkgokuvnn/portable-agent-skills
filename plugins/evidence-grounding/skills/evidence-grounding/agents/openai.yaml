@@ -1,6 +1,0 @@
-interface:
-  display_name: "Evidence Grounding"
-  short_description: "Ground material claims in reliable evidence"
-  default_prompt: "Use $evidence-grounding to verify the material claims in this answer and report uncertainty concisely."
-policy:
-  allow_implicit_invocation: true

@@ -1,6 +1,0 @@
-interface:
-  display_name: "Codemap"
-  short_description: "Map structural dependencies before changes"
-  default_prompt: "Use $codemap to map structural dependencies and the full blast radius of this change."
-policy:
-  allow_implicit_invocation: true
