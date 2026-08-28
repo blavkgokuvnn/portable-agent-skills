@@ -55,17 +55,19 @@ If any answer is no, park the action in one line without investigating it.
 ## Recheck during execution
 
 At each meaningful plan phase or milestone, inspect only the delta since the last checkpoint
-silently. Emit `OVER-ENGINEERING?` only when the user asks, the delta shows risk requiring
-`CUT|REFRAME|STOP`, or 30 minutes have passed since the last emitted audit and work continues. If
-30 minutes pass mid-step, emit at the next model resumption.
+silently. The boundary itself never triggers output. Emit `OVER-ENGINEERING?` only when the user
+explicitly asks, a new delta shows risk requiring `CUT|REFRAME|STOP`, or 30 minutes have passed since
+the last emitted audit and work continues. If 30 minutes pass mid-step, emit at the next model
+resumption. A clean boundary before 30 minutes must produce no message.
 
 A meaningful boundary changes a decision, artifact, code, or verification state, not each tool
-call. Skip an empty delta; never emit more than once per 30 minutes unless the user asks, and do not
-audit the same delta again for overlapping plan, verification, or phase transitions. Add no timer,
-ledger, hook, agent, or scheduler.
+call. Skip an empty delta. A clean cadence audit may emit at most once per 30 minutes; an explicit
+user request or new risk may bypass that interval, but the same delta must never emit twice across
+overlapping plan, verification, or phase transitions. Add no timer, ledger, hook, agent, or
+scheduler.
 
-Count route switches, new artifacts or mechanisms, repeated or unchanged observations, and
-verification passes. Then run the four-line audit below. If clean, report
+Only when an emission is due, count route switches, new artifacts or mechanisms, repeated or
+unchanged observations, and verification passes. Then run the four-line audit below. If clean, report
 `NO — <route stays cheapest>; NEXT: <signal>` in one line. If risky, report the counts and execute
 one `CUT`, `REFRAME`, or `STOP` before more work.
 
