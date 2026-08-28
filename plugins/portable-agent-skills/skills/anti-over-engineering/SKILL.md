@@ -52,6 +52,23 @@ For every next action ask:
 
 If any answer is no, park the action in one line without investigating it.
 
+## Recheck during execution
+
+At each meaningful plan phase or milestone, inspect only the delta since the last checkpoint
+silently. Emit `OVER-ENGINEERING?` only when the user asks, the delta shows risk requiring
+`CUT|REFRAME|STOP`, or 30 minutes have passed since the last emitted audit and work continues. If
+30 minutes pass mid-step, emit at the next model resumption.
+
+A meaningful boundary changes a decision, artifact, code, or verification state, not each tool
+call. Skip an empty delta; never emit more than once per 30 minutes unless the user asks, and do not
+audit the same delta again for overlapping plan, verification, or phase transitions. Add no timer,
+ledger, hook, agent, or scheduler.
+
+Count route switches, new artifacts or mechanisms, repeated or unchanged observations, and
+verification passes. Then run the four-line audit below. If clean, report
+`NO — <route stays cheapest>; NEXT: <signal>` in one line. If risky, report the counts and execute
+one `CUT`, `REFRAME`, or `STOP` before more work.
+
 ## Hard interrupts
 
 | Cue | Required response |
